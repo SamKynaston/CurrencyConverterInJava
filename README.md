@@ -1,4 +1,4 @@
 # 💸 Currency Converter
 ## Design
-![](https://github.com/SamKynaston/CurrencyConverterInJava/Design/CurrencyConverterUML.drawio.png)
+![](https://github.com/SamKynaston/CurrencyConverterInJava/blob/main/Design/CurrencyConverterUML.drawio.png)
 ## Tech Stack

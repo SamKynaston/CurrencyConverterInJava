@@ -12,6 +12,10 @@ public class CurrencyTable {
         CurrencyList.remove(currency);
     }
 
+    public ArrayList<TypeOfCurrency> GetAllCurrencies() {
+        return CurrencyList;
+    }
+
     public TypeOfCurrency GetCurrencyFromCode(String Code) {
         for (TypeOfCurrency Currency : CurrencyList) {
             if (!Objects.equals(Currency.GetCurrencyCode(), Code)) { continue; }

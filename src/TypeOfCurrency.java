@@ -1,4 +1,4 @@
-public class Currency {
+public class TypeOfCurrency {
     private String CurrencyCode;
     private double ExchangeRate;
 
@@ -18,7 +18,7 @@ public class Currency {
         this.CurrencyCode = code;
     }
 
-    public Currency(String code, double rate) {
+    public TypeOfCurrency(String code, double rate) {
         SetExchangeRate(rate);
         SetCurrencyCode(code);
     }

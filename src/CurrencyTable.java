@@ -1,21 +1,20 @@
 import java.util.ArrayList;
-import java.util.Currency;
 import java.util.Objects;
 
 public class CurrencyTable {
-    private ArrayList<Currency> CurrencyList = new ArrayList<>();
+    private final ArrayList<TypeOfCurrency> CurrencyList = new ArrayList<>();
 
-    public void AddCurrency(Currency currency) {
+    public void AddCurrency(TypeOfCurrency currency) {
         CurrencyList.add(currency);
     }
 
-    public void RemoveCurrency(Currency currency) {
+    public void RemoveCurrency(TypeOfCurrency currency) {
         CurrencyList.remove(currency);
     }
 
-    public Currency GetCurrencyFromCode(String Code) {
-        for (Currency Currency : CurrencyList) {
-            if (!Objects.equals(Currency.getCurrencyCode(), Code)) { continue; }
+    public TypeOfCurrency GetCurrencyFromCode(String Code) {
+        for (TypeOfCurrency Currency : CurrencyList) {
+            if (!Objects.equals(Currency.GetCurrencyCode(), Code)) { continue; }
 
             return Currency;
         }

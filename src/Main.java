@@ -1,4 +1,4 @@
-import java.util.Currency;
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Main {
@@ -37,9 +37,10 @@ public class Main {
             TypeOfCurrency CurrencyObject1 = currencies.GetAllCurrencies().get(Currency1);
             TypeOfCurrency CurrencyObject2 = currencies.GetAllCurrencies().get(Currency2);
 
+            DecimalFormat NumberFormat = new DecimalFormat("##.00");
             double ConvertedAmount = AmountToConvert * (CurrencyObject1.GetExchangeRate() / CurrencyObject2.GetExchangeRate());
 
-            System.out.println("Your amount is: " + ConvertedAmount);
+            System.out.println("Your amount is: " + NumberFormat.format(ConvertedAmount));
 
             isClosed = true;
         }

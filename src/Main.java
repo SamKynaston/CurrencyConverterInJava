@@ -5,6 +5,33 @@ public class Main {
     private static final Scanner reader = new Scanner(System.in);
     private static final CurrencyTable currencies = new CurrencyTable();
 
+    public static void CurrencyAdditionMenu() {
+        boolean isClosed = false;
+
+        while (!isClosed) {
+            System.out.println("Type in a currency code: ");
+            String CurrencyCode = reader.next();
+
+            System.out.println("Type in an exchange rate: ");
+            int ExchangeRate = reader.nextInt();
+
+            currencies.AddCurrency(new TypeOfCurrency(CurrencyCode, ExchangeRate));
+            isClosed = true;
+        }
+    }
+
+    public static void CurrencyRemovalMenu() {
+        boolean isClosed = false;
+
+        while (!isClosed) {
+            System.out.println("Type in a currency code: ");
+            String CurrencyCode = reader.next();
+
+            currencies.RemoveCurrency(currencies.GetCurrencyFromCode(CurrencyCode));
+            isClosed = true;
+        }
+    }
+
     public static void CurrencyConversionMenu() {
         boolean isClosed = false;
         boolean hasDecided = false;
@@ -54,6 +81,25 @@ public class Main {
         currencies.AddCurrency(new TypeOfCurrency("YEN", 0.01));
         currencies.AddCurrency(new TypeOfCurrency("ZLT", 3));
 
-        CurrencyConversionMenu();
+        boolean isClosed = false;
+
+        while (!isClosed) {
+            System.out.println("1. Convert Currencies");
+            System.out.println("2. Add a Currency");
+            System.out.println("3. Remove a Currency");
+            System.out.println("0. Quit");
+
+            int Choice = reader.nextInt();
+
+            if (Choice == 1) {
+                CurrencyConversionMenu();
+            } else if (Choice == 2) {
+                CurrencyAdditionMenu();
+            } else if (Choice == 3) {
+                CurrencyRemovalMenu();
+            } else if (Choice == 0) {
+                isClosed = true;
+            }
+        }
     }
 }
